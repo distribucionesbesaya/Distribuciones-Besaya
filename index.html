@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Distribuciones Besaya | Calidad y sabor</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f2ee;
+            color: #292929;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(15, 15, 15, 0.94) 0%,
+                    rgba(15, 15, 15, 0.78) 48%,
+                    rgba(15, 15, 15, 0.30) 100%
+                ),
+                url("img/antioque%C3%B1o-x20u.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 90px;
+            background: linear-gradient(transparent, #f5f2ee);
+        }
+
+        .hero-contenido {
+            width: 1120px;
+            max-width: 90%;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+            padding: 80px 0;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 24px;
+            background: #9d1d2f;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.02;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #d9a441;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #eeeeee;
+            margin-bottom: 35px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s ease;
+        }
+
+        .boton-principal {
+            background: #9d1d2f;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        .boton-principal:hover {
+            background: #b5263a;
+            transform: translateY(-3px);
+        }
+
+        .boton-secundario {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .boton-secundario:hover {
+            background: white;
+            color: #222;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        .seccion {
+            max-width: 1120px;
+            margin: auto;
+            padding: 95px 25px;
+        }
+
+        .encabezado-seccion {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+
+        .encabezado-seccion small,
+        .presentacion-texto small {
+            color: #9d1d2f;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .encabezado-seccion h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            margin-top: 10px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .encabezado-seccion p {
+            max-width: 680px;
+            margin: auto;
+            color: #686868;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           CATEGORÍAS
+        ========================= */
+
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .categoria {
+            position: relative;
+            min-height: 310px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            border-radius: 18px;
+            overflow: hidden;
+            color: white;
+            text-decoration: none;
+            background: #333;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+            transition: 0.3s ease;
+        }
+
+        .categoria::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.88),
+                    rgba(0, 0, 0, 0.08)
+                );
+            transition: 0.3s ease;
+        }
+
+        .categoria-contenido {
+            position: relative;
+            z-index: 2;
+        }
+
+        .categoria h3 {
+            font-size: 27px;
+            margin-bottom: 6px;
+        }
+
+        .categoria p {
+            color: #e2e2e2;
+            font-size: 14px;
+        }
+
+        .categoria:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.20);
+        }
+
+        .categoria:hover::before {
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(157, 29, 47, 0.82),
+                    rgba(0, 0, 0, 0.12)
+                );
+        }
+
+        .categoria-chorizos {
+            background: url("img/cuncia-x5u.jpeg") center / cover;
+        }
+
+        .categoria-jamones {
+            background: url("img/jamon-500g.jpeg") center / cover;
+        }
+
+        .categoria-salchichas {
+            background: url("img/americana-x6u.jpeg") center / cover;
+        }
+
+        .categoria-tocinetas {
+            background: url("img/tocineta-ahumada-900g.jpeg") center / cover;
+        }
+
+        /* =========================
+           PRESENTACIÓN
+        ========================= */
+
+        .presentacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .presentacion-imagen {
+            min-height: 500px;
+            border-radius: 22px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
+                url("img/parrillero-x5u.jpeg") center / cover;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+        }
+
+        .presentacion-texto h2 {
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.12;
+            margin: 12px 0 22px;
+            letter-spacing: -1px;
+        }
+
+        .presentacion-texto p {
+            color: #666;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .lista {
+            list-style: none;
+            margin-top: 28px;
+        }
+
+        .lista li {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .lista li::before {
+            content: "✓";
+            color: #9d1d2f;
+            font-weight: bold;
+            margin-right: 11px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            margin: 15px auto 85px;
+            max-width: 1120px;
+            width: calc(100% - 50px);
+            padding: 75px 30px;
+            text-align: center;
+            border-radius: 22px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #242424,
+                    #171717
+                );
+            color: white;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #141414;
+            color: white;
+            text-align: center;
+            padding: 48px 20px;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+            .categorias {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .presentacion {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .presentacion-imagen {
+                min-height: 420px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero-contenido {
+                max-width: 88%;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .categorias {
+                grid-template-columns: 1fr;
+            }
+
+            .categoria {
+                min-height: 280px;
+            }
+
+            .seccion {
+                padding: 70px 20px;
+            }
+
+            .presentacion-imagen {
+                min-height: 350px;
+            }
+
+            .cta {
+                width: calc(100% - 40px);
+                padding: 55px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-contenido">
+
+            <span class="etiqueta">
+                Distribuciones Besaya
+            </span>
+
+            <h1>
+                Calidad y sabor<br>
+                para <span>tu mesa.</span>
+            </h1>
+
+            <p>
+                Productos cárnicos y embutidos seleccionados
+                para nuestros clientes. Conoce nuestro catálogo
+                de chorizos, jamones, salchichas y tocinetas.
+            </p>
+
+
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CATÁLOGO
+    ========================= -->
+
+    <section class="seccion">
+
+        <div class="encabezado-seccion">
+
+            <small>Nuestro catálogo</small>
+
+            <h2>Productos para cada ocasión</h2>
+
+            <p>
+                Explora nuestras categorías y encuentra
+                diferentes opciones de productos para compartir
+                en familia, preparar tus comidas o disfrutar
+                de una buena parrillada.
+            </p>
+
+        </div>
+
+
+        <div class="categorias">
+
+            <a class="categoria categoria-chorizos"
+               href="chorizos.html">
+
+                <div class="categoria-contenido">
+
+                    <h3>Chorizos</h3>
+
+                    <p>
+                        Variedad de sabores y presentaciones.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a class="categoria categoria-jamones"
+               href="jamones.html">
+
+                <div class="categoria-contenido">
+
+                    <h3>Jamones</h3>
+
+                    <p>
+                        Diferentes presentaciones para tu mesa.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a class="categoria categoria-salchichas"
+               href="salchichas.html">
+
+                <div class="categoria-contenido">
+
+                    <h3>Salchichas</h3>
+
+                    <p>
+                        Opciones prácticas para tus comidas.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a class="categoria categoria-tocinetas"
+               href="tocinetas.html">
+
+                <div class="categoria-contenido">
+
+                    <h3>Tocinetas</h3>
+
+                    <p>
+                        Una opción ideal para complementar
+                        tus preparaciones.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE EL NEGOCIO
+    ========================= -->
+
+    <section class="seccion">
+
+        <div class="presentacion">
+
+            <div class="presentacion-imagen"></div>
+
+
+            <div class="presentacion-texto">
+
+                <small>Sobre Distribuciones Besaya</small>
+
+                <h2>
+                    Un negocio familiar,
+                    cercano y confiable.
+                </h2>
+
+                <p>
+                    Distribuciones Besaya nace como un emprendimiento
+                    familiar dedicado a la comercialización y
+                    distribución de productos cárnicos y embutidos.
+                </p>
+
+                <p>
+                    Trabajamos de manera cercana con nuestros clientes,
+                    recibiendo pedidos y realizando entregas para
+                    facilitar el acceso a nuestros productos.
+                </p>
+
+                <ul class="lista">
+
+                    <li>Atención personalizada</li>
+
+                    <li>Pedidos de nuestros clientes</li>
+
+                    <li>Entrega de productos</li>
+
+                    <li>Variedad de presentaciones</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LLAMADO A LA ACCIÓN
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            ¿Quieres hacer un pedido?
+        </h2>
+
+        <p>
+            Comunícate con nosotros para conocer nuestros productos,
+            consultar disponibilidad y realizar tu pedido.
+        </p>
+
+        <a class="boton boton-principal" href="contacto.html">
+            Contactar ahora
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>Distribuciones Besaya</h3>
+
+        <p>
+            Productos cárnicos y embutidos.
+        </p>
+
+        <p>
+            Emprendimiento familiar.
+        </p>
+
+        <p>
+            © 2026 Distribuciones Besaya
+        </p>
+
+    </footer>
+
+</body>
+</html>
