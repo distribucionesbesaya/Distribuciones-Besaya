@@ -139,15 +139,20 @@
         }
 
         .boton-whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: white !important;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2;
+    min-height: 50px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
 
         .boton-whatsapp:hover {
             transform: translateY(-3px);
@@ -375,27 +380,21 @@
 
          <div class="botones-whatsapp">
 
-    <a
-        class="boton-whatsapp"
-        href="https://api.whatsapp.com/send?phone=573013954241&text=Buenas%20quisiera%20realizar%20un%20pedido"
-        target="_blank"
-        rel="noopener noreferrer">
-        Contactar al WhatsApp 1
+    <a class="boton-whatsapp"
+       href="https://api.whatsapp.com/send?phone=573013954241&text=Buenas%20quisiera%20realizar%20un%20pedido"
+       target="_blank"
+       rel="noopener noreferrer">
+        <span>Contactar al WhatsApp 1</span>
     </a>
 
-    <a
-        class="boton-whatsapp"
-        href="https://api.whatsapp.com/send?phone=573103969686&text=Buenas%20quisiera%20realizar%20un%20pedido"
-        target="_blank"
-        rel="noopener noreferrer">
-        Contactar al WhatsApp 2
+    <a class="boton-whatsapp"
+       href="https://api.whatsapp.com/send?phone=573103969686&text=Buenas%20quisiera%20realizar%20un%20pedido"
+       target="_blank"
+       rel="noopener noreferrer">
+        <span>Contactar al WhatsApp 2</span>
     </a>
 
 </div>
-
-</div>
-
-            </div>
 
         </section>
 
