@@ -16,14 +16,14 @@
         }
 
         body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 10% 20%, rgba(181, 30, 53, 0.08), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(181, 30, 53, 0.06), transparent 30%),
-        linear-gradient(135deg, #f7f5f2 0%, #ebe7e2 50%, #f8f6f3 100%);
-    color: #252525;
-    min-height: 100vh;
-}
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(181, 30, 53, 0.08), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(181, 30, 53, 0.06), transparent 30%),
+                linear-gradient(135deg, #f7f5f2 0%, #ebe7e2 50%, #f8f6f3 100%);
+            color: #252525;
+            min-height: 100vh;
+        }
 
         /* BARRA SUPERIOR */
 
@@ -80,14 +80,14 @@
         }
 
         .tarjeta-contacto {
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 24px;
-    padding: 55px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-    text-align: center;
-    margin-bottom: 70px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-}
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 24px;
+            padding: 55px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            margin-bottom: 70px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
 
         .tarjeta-contacto h2 {
             font-size: 30px;
@@ -139,20 +139,20 @@
         }
 
         .boton-whatsapp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #25D366;
-    color: white !important;
-    text-decoration: none;
-    padding: 15px 25px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1.2;
-    min-height: 50px;
-    transition: transform 0.25s, box-shadow 0.25s;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white !important;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.2;
+            min-height: 50px;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
 
         .boton-whatsapp:hover {
             transform: translateY(-3px);
@@ -200,91 +200,67 @@
 
         /* CELULAR */
 
-      @media (max-width: 750px) {
+        @media (max-width: 750px) {
 
-    .encabezado {
-        padding: 50px 15px 30px;
-    }
-
-    .encabezado h1 {
-        font-size: 38px;
-    }
-
-    .encabezado p {
-        font-size: 17px;
-    }
-
-    .contenedor {
-        padding: 15px;
-    }
-
-    .tarjeta-contacto {
-        padding: 35px 20px;
-        margin-bottom: 40px;
-    }
-
-    .tarjeta-contacto h2 {
-        font-size: 26px;
-    }
-
-    .descripcion {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-
-    .datos {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-
-    .botones-whatsapp {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .boton-whatsapp {
-        display: block;
-        width: 100%;
-        padding: 16px 15px;
-        text-align: center;
-    }
-
-    .mensaje-final {
-        padding: 35px 20px;
-        margin-bottom: 40px;
-    }
-
-    .mensaje-final h2 {
-        font-size: 25px;
-    }
-
-    footer {
-        padding: 35px 15px;
-    }
-
-}
+            .encabezado {
+                padding: 50px 15px 30px;
+            }
 
             .encabezado h1 {
                 font-size: 38px;
             }
 
+            .encabezado p {
+                font-size: 17px;
+            }
+
+            .contenedor {
+                padding: 15px;
+            }
+
             .tarjeta-contacto {
                 padding: 35px 20px;
+                margin-bottom: 40px;
+            }
+
+            .tarjeta-contacto h2 {
+                font-size: 26px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+                margin-bottom: 30px;
             }
 
             .datos {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 30px;
             }
 
             .botones-whatsapp {
                 flex-direction: column;
+                width: 100%;
+                gap: 15px;
             }
 
             .boton-whatsapp {
                 width: 100%;
+                padding: 16px 15px;
+                text-align: center;
+            }
+
+            .mensaje-final {
+                padding: 35px 20px;
+                margin-bottom: 40px;
+            }
+
+            .mensaje-final h2 {
+                font-size: 25px;
+            }
+
+            footer {
+                padding: 35px 15px;
             }
         }
 
@@ -337,6 +313,8 @@
 
             <div class="datos">
 
+                <!-- WHATSAPP 1 -->
+
                 <div class="dato">
 
                     <strong>
@@ -350,6 +328,8 @@
                 </div>
 
 
+                <!-- WHATSAPP 2 -->
+
                 <div class="dato">
 
                     <strong>
@@ -362,6 +342,8 @@
 
                 </div>
 
+
+                <!-- ATENCIÓN -->
 
                 <div class="dato">
 
@@ -378,23 +360,31 @@
             </div>
 
 
-         <div class="botones-whatsapp">
+            <!-- BOTONES DE WHATSAPP -->
 
-    <a class="boton-whatsapp"
-       href="https://api.whatsapp.com/send?phone=573234145635&text=Buenas%2C%20quisiera%20realizar%20un%20pedido"
-       target="_blank"
-       rel="noopener noreferrer">
-        <span>Contactar al WhatsApp 1</span>
-    </a>
+            <div class="botones-whatsapp">
 
-    <a class="boton-whatsapp"
-       href="https://api.whatsapp.com/send?phone=573103969686&text=Buenas%2C%20quisiera%20realizar%20un%20pedido"
-       target="_blank"
-       rel="noopener noreferrer">
-        <span>Contactar al WhatsApp 2</span>
-    </a>
+                <!-- WHATSAPP 1: NUEVO NÚMERO -->
 
-</div>
+                <a class="boton-whatsapp"
+                   href="https://api.whatsapp.com/send?phone=573234145635&text=Buenas%2C%20quisiera%20realizar%20un%20pedido"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span>Contactar al WhatsApp 1</span>
+                </a>
+
+
+                <!-- WHATSAPP 2: NÚMERO ORIGINAL -->
+
+                <a class="boton-whatsapp"
+                   href="https://api.whatsapp.com/send?phone=573103969686&text=Buenas%2C%20quisiera%20realizar%20un%20pedido"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span>Contactar al WhatsApp 2</span>
+                </a>
+
+            </div>
+
         </section>
 
 
